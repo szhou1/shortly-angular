@@ -13,4 +13,5 @@ angular.module('shortly.links', [])
   };
 
   $scope.init();
+
 });
