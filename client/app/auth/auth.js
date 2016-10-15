@@ -8,9 +8,9 @@ angular.module('shortly.auth', [])
   $scope.inputError = false;
 
   $scope.signin = function () {
-    console.log('user', $scope.user);
     if(!$scope.user.username || !$scope.user.password) {
       $scope.inputError = true;
+      return;
     }
 
     Auth.signin($scope.user)
@@ -24,10 +24,9 @@ angular.module('shortly.auth', [])
   };
 
   $scope.signup = function () {
-    console.log('user', $scope.user);
-    console.log($scope.inputError);
     if(!$scope.user.username || !$scope.user.password) {
       $scope.inputError = true;
+      return;
     }
 
 

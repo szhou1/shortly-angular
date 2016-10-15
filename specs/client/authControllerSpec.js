@@ -44,7 +44,10 @@ describe('AuthController', function () {
   it('should store token in localStorage after signup', function () {
     // create a fake JWT for auth
     var token = 'sjj232hwjhr3urw90rof';
-
+    $scope.user = {
+      username: 'steve',
+      password: 'steve'
+    };
     // make a 'fake' reques to the server, not really going to our server
     $httpBackend.expectPOST('/api/users/signup').respond({token: token});
     $scope.signup();
@@ -59,9 +62,33 @@ describe('AuthController', function () {
   it('should store token in localStorage after signin', function () {
     // create a fake JWT for auth
     var token = 'sjj232hwjhr3urw90rof';
+    $scope.user = {
+      username: 'steve',
+      password: 'steve'
+    };
     $httpBackend.expectPOST('/api/users/signin').respond({token: token});
     $scope.signin();
     $httpBackend.flush();
     expect($window.localStorage.getItem('com.shortly')).to.equal(token);
+  });
+
+  it('should not call signin function when user enters faulty input', function() {
+    sinon.spy(Auth, 'signin');
+    $scope.user = {
+      username: '',
+      password: 'mypass'
+    }
+    $scope.signin();
+    expect(Auth.signin.called).to.equal(false);
+  });
+
+  it('should not call signup function when user enters faulty input', function() {
+    sinon.spy(Auth, 'signup');
+    $scope.user = {
+      username: '',
+      password: ''
+    }
+    $scope.signup();
+    expect(Auth.signup.called).to.equal(false);
   });
 });
