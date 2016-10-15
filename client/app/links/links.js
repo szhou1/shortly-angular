@@ -14,4 +14,9 @@ angular.module('shortly.links', [])
 
   $scope.init();
 
+})
+.directive('shortLink', function() {
+  return {
+    templateUrl: '/app/links/short-link.html'
+  };
 });

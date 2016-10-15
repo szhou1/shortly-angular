@@ -77,7 +77,7 @@ describe('AuthController', function () {
     $scope.user = {
       username: '',
       password: 'mypass'
-    }
+    };
     $scope.signin();
     expect(Auth.signin.called).to.equal(false);
   });
@@ -87,7 +87,7 @@ describe('AuthController', function () {
     $scope.user = {
       username: '',
       password: ''
-    }
+    };
     $scope.signup();
     expect(Auth.signup.called).to.equal(false);
   });

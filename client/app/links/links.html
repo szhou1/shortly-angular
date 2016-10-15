@@ -1,5 +1,5 @@
 <div id='container'>
-  <div ng-controller="LinksController" ng-init="init()">
+  <div ng-controller="LinksController">
     <div class='navigation'>
       <ul>
         <li><a href='/#/links' class='index'> All Links </a></li>
@@ -8,16 +8,8 @@
     <a href='/#/signout' class='index' ng-click='logout()'> Logout </a>
     </div>
     <label>Search by Title: <input type='text' ng-model='searchText.title'></label>
-    <div class='links' ng-repeat='link in data.links | orderBy:"-visits" | filter:searchText '>
-      <div class='link'>
-        <img src='../assets/redirect_icon.png'/>
-        <div class='info'>
-          <div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>
-          <div class='title'>{{link.title}}</div>
-          <div class='original'>{{link.url}}</div>
-          <a href='{{link.baseUrl}}/{{link.code}}'>{{link.baseUrl}}/{{link.code}}</a>
-        </div>
-      </div>
+    <div short-link class='links' ng-repeat='link in data.links | orderBy:"-visits" | filter:searchText '>
+
     </div>
   </div>
 </div>
