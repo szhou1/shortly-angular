@@ -1,6 +1,17 @@
 <div id='container'>
 <!-- Your code here -->
+<div ng-controller='ShortenController'>
+  <h1> Create </h1>
+  <div class='creator'>
+    <form ng-submit='addLink()' ng-init='flag = false;'>
+        <input class='text' type='text' name='url' ng-model='link' ng-disable='flag'>
+        <input type='submit' value='Shorten'>
+    </form>
+    <img class='spinner' ng-show='flag' src='../assets/spiffygif_46x46.gif'>
+    <div class='message'></div>
+  </div>
 
+</div>
 </div>
 
 
