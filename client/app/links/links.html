@@ -7,7 +7,7 @@
       </ul>
     <a href='/#/signout' class='index' ng-click='logout()'> Logout </a>
     </div>
-    <div class='links' ng-repeat='link in data.links track by $index'>
+    <div class='links' ng-repeat='link in data.links | orderBy:"-visits"'>
       <div class='link'>
         <img src='../assets/redirect_icon.png'/>
         <div class='info'>
