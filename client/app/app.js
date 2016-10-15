@@ -7,10 +7,10 @@ angular.module('shortly', [
 ])
 .config(function ($routeProvider, $httpProvider) {
   $routeProvider
-    // .when('/', {
-    //   templateUrl: 'app/auth/signin.html',
-    //   controller: 'AuthController'
-    // })
+    .when('/', {
+      templateUrl: 'app/auth/signin.html',
+      controller: 'AuthController'
+    })
     .when('/signin', {
       templateUrl: 'app/auth/signin.html',
       controller: 'AuthController'
@@ -67,8 +67,6 @@ angular.module('shortly', [
     if (next.$$route.controller === 'LogoutController') {
       Auth.signout();
     } else {
-      console.log('inside auth check!!!');
-      console.log(next.$$route);
       if (next.$$route && next.$$route.authenticate && !Auth.isAuth()) {
         $location.path('/signin');
       }

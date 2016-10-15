@@ -19,4 +19,9 @@ angular.module('shortly.links', [])
   return {
     templateUrl: '/app/links/short-link.html'
   };
+})
+.directive('navigation', function() {
+  return {
+    templateUrl: '/app/nav.html'
+  };
 });

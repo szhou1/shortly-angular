@@ -17,3 +17,8 @@ angular.module('shortly.shorten', [])
       });
   };
 });
+// .directive('shortLink', function() {
+//   return {
+//     templateUrl: '/app/links/short-link.html'
+//   }
+// });

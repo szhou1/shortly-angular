@@ -1,15 +1,7 @@
 <div id='container'>
   <div ng-controller="LinksController">
-    <div class='navigation'>
-      <ul>
-        <li><a href='/#/links' class='index'> All Links </a></li>
-        <li><a href='/#/shorten' class='create'> Shorten </a></li>
-      </ul>
-    <a href='/#/signout' class='index' ng-click='logout()'> Logout </a>
-    </div>
+    <div navigation class='navigation'></div>
     <label>Search by Title: <input type='text' ng-model='searchText.title'></label>
-    <div short-link class='links' ng-repeat='link in data.links | orderBy:"-visits" | filter:searchText '>
-
-    </div>
+    <div short-link class='links' ng-repeat='link in data.links | orderBy:"-visits" | filter:searchText '></div>
   </div>
 </div>
