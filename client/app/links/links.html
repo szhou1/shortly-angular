@@ -1,7 +1,12 @@
 <div id='container'>
   <div ng-controller="LinksController" ng-init="init()">
-    <h1> Links here </h1>
-
+    <div class='navigation'>
+      <ul>
+        <li><a href='/#/links' class='index'> All Links </a></li>
+        <li><a href='/#/shorten' class='create'> Shorten </a></li>
+      </ul>
+    <a href='/#/signout' class='index' ng-click='logout()'> Logout </a>
+    </div>
     <div class='links' ng-repeat='link in data.links track by $index'>
       <div class='link'>
         <img src='../assets/redirect_icon.png'/>

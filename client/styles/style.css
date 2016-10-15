@@ -40,6 +40,16 @@ h1 {
   text-align: center;
 }
 
+.navigation a {
+  width: 100px;
+  height: 20px;
+  line-height: 20px;
+  padding: 10px;
+  display: block;
+  text-align: center; 
+  float: right; 
+}
+
 .navigation li a:hover {
   background-color: #ddd;
 }
@@ -97,7 +107,7 @@ form {
   margin: 10px;
 }
 
-input {
+form input[type=text], form input[type=password] {
   width: 360px;
   display: block;
   font-size: 13px;
